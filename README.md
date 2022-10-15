@@ -1,3 +1,3 @@
 # printf
 
-Okay Kim you have to change something here.
+Hey buddy, this is our homeade printf statement. We got the recipe from Shanes Granmaw. haha.
