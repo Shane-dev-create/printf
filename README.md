@@ -6,6 +6,7 @@ Contributors
 Gilbert Segakweng and Kim Martin contributed to this custom printf C function. Resources and instructions were provided by ALX.
 
 Purpose
+
 The purpose of the printf function is to be able to print variables of various data types, as well as to return a count of the characters printed.
 
 Tasks
