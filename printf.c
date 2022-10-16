@@ -86,12 +86,10 @@ continue;
 else
 {
 _putcharformat[k];
+sum++;
 k++;
-
 }
 }
-
 va_end(ap);
 return (sum);
 }
-
