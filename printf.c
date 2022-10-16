@@ -59,7 +59,8 @@ int = k;
 int (*func)();
 
 if (!format || (format[0] == '%' && format[1] == '\0'))
-return (-1)
+return (-1);
+
 va_start(ap, format);
 
 while (format[k])
@@ -92,6 +93,5 @@ k++;
 
 va_end(ap);
 return (sum);
-
 }
 
