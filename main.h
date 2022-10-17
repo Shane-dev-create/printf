@@ -30,4 +30,15 @@ char *convert_base(unsigned long nb, unsigned int base, int upper);
 char *_strdup(char *str);
 char *convert_base_pointer(unsigned long p);
 
+/**
+ * struct flags_printf - struct conversion to function
+ * @c: flag string
+ * @f: pointer to function
+ */
+
+typdef struct flags_printf
+{
+char *c;
+int (*f)(va_list);
+} flags_p;
 #endif/* MAIN_H */
