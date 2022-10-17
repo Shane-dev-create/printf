@@ -1,49 +1,8 @@
-#include <stdarg.h>
+
 #include "main.h"
-#include <stddef.h>
 
-/**
- * get_op - select function for char conversion
- * @c: char to check
- *
- * Return: pointer to function
- */
 
-int (*get_op(const char c))(va_list)
-{
-
-int k = 0;
-
-flags_p fp[] = {
-	{"c", print_char},
-	{"s", print_str},
-	{"i", print_nbr},
-	{"d", promt_nbr},
-	{"b", print_binary},
-	{"o", print_octal},
-	{"x", print_hexa_lower},
-	{"X", print_hexa_upper},
-	{"u", print_unsigned},
-	{"S", print_str_unprintable},
-	{"r", print_str_reverse},
-	{"p", print_ptr},
-	{"R", print_rot13},
-	{"%", print_percent},
-
-};
-
-while (k < 14)
-{
-if (c == fp[k].c[0])
-{
-return (fp[k].f);
-
-}
-k++;
-}
-
-return (NULL);
-}
+void print_buffer(char buffer[], int *buff_ind);
 
 /**
  * _printf - emulates the behavior of a printf function
@@ -54,42 +13,54 @@ return (NULL);
 
 int _printf(const char *format, ...)
 {
-va_list ap;
-int sum = 0, k = 0;
-int (*func)();
+int i, printed = 0, printed_chars = 0;
+int flags, width, precision, size, buff_ind = 0;
+va_list list;
+char buffer[BUFF_SIZE];
 
-if (!format || (format[0] == '%' && format[1] == '\0'))
+if (format == NULL)
 return (-1);
 
-va_start(ap, format);
+va_start(list, format);
 
-while (format[k])
+for (i = 0; format && format[i] != '\0'; i++)
 {
-if (format[k] == '%')
+if (format[i] != '%')
 {
-if (format[k + 1] != '\0')
-func = get_op(format[k + 1]);
-if (func == NULL)
-{
-_putchar(format[k]);
-sum++;
-k++;
+buffer[buff_ind++] = format[i];
+if (buff_ind == BUFF_SIZE)
+print_buffer(buffer, &buff_ind);
+
+printed_chars++;
 }
 else
 {
-sum += func(ap);
-k += 2;
-continue;
+print_buffer(buffer, &buff_ind);
+flags = get_flags(format, &i);
+width = get_width(format, &i, list);
+precision = get_precision(format, &i, list);
+size = get_size(format, &i);
+++i;
+printed = handle_print(format & i, list, buffer,
+flags, width, precision, size);
+if (printed == -1)
+return (-1);
+printed_chars += printed;
 
 }
 }
-else
+print_buffer(buffer, &buff_ind);
+va_end(list);
+return (printed chars);
+
+/**
+ * print_buffer - prints the content of the buffer if it exists
+ *  @buffer: array of chars
+ *  @buff_ind: index at which to add next char
+ */
+void print_buffer(char buffer[], int *buff_ind)
 {
-_putchar(format[k]);
-sum++;
-k++;
-}
-}
-va_end(ap);
-return (sum);
+if (*buff_ind > 0)
+write(1, &buffer[0], *buff_ind);
+*buff_ind = 0;
 }
