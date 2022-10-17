@@ -85,7 +85,7 @@ continue;
 }
 else
 {
-_putcharformat[k];
+_putchar(format[k]);
 sum++;
 k++;
 }
