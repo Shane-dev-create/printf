@@ -1,33 +1,32 @@
-## printf
+# _printf()
 
-![Project Image](https://alx-intranet.hbtn.io/projects/228#:~:text=0x11.%20C%20%2D%20printf,-C)
+---
+
+![Project Image](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/228/printf.png)
 
 
 ---
 
 ### Table of Contents
-You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
 - [References](#references)
 - [Authors](#authors)
-- [Technologies] (#technologies)
+- [Technologies](#technologies)
+
 ---
 
 ## Description
 
-The purpose of this project is to create a custom printf function that mimicks the printf function in C standard library. The goal is to come as close to the standard C prinf function as possible while adhering to strict betty linter standards.
+The purpose of this project is to create a custom printf function that mimicks the printf function in C standard library. Our function _printf() writes output to stdout. The goal is to come as close to the standard C prinf function as possible while adhering to strict betty linter standards.
 
 #### Technologies
 
-- Technology used
-C programming language
+-C programming language
 
 [Back To The Top](#printf)
 
-
 ---
-
 ## References
 Resources and course material provided by ALX SE
 
@@ -36,7 +35,7 @@ Resources and course material provided by ALX SE
 ---
 
 ## Authors
-Gilbert Segakweng
+Gilbert Segakweng\s\s
 Kim Martin
 
 - Twitter - [@shanespeare01](https://twitter.com/shanespeare01)
