@@ -1,25 +1,45 @@
-printf
+## printf
+
+![Project Image](https://alx-intranet.hbtn.io/projects/228#:~:text=0x11.%20C%20%2D%20printf,-C)
 
 
-Contributors
+---
 
-Gilbert Segakweng and Kim Martin contributed to this custom printf C function. Resources and instructions were provided by ALX.
+### Table of Contents
+You're sections headers will be used to reference location of destination.
 
-Purpose
+- [Description](#description)
+- [References](#references)
+- [Authors](#authors)
+- [Technologies] (#technologies)
+---
 
-The purpose of the printf function is to be able to print variables of various data types, as well as to return a count of the characters printed.
+## Description
 
-Tasks
+The purpose of this project is to create a custom printf function that mimicks the printf function in C standard library. The goal is to come as close to the standard C prinf function as possible while adhering to strict betty linter standards.
 
-0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
+#### Technologies
 
-Write a function that produces output according to a format.
+- Technology used
+C programming language
+
+[Back To The Top](#printf)
 
 
+---
 
-1. Education is when you read the fine print. Experience is what you get if you don't
+## References
+Resources and course material provided by ALX SE
 
-Handle the following conversion specifiers:
+[Back To The Top](#printf)
 
-d
-i
+---
+
+## Authors
+Gilbert Segakweng
+Kim Martin
+
+- Twitter - [@shanespeare01](https://twitter.com/shanespeare01)
+
+
+[Back To The Top](#printf)
